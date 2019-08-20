@@ -18,7 +18,12 @@ class MyBinaryTree(object):
     def insert(self, val, head, parent=None):
         pass
 
-    def delete(self, val, node, parent=None):
+    def delete(self, val):
+        p_delete(val, self.head, None)
+
+    def p_delete(self, val, node=None, parent=None):
+        if node is None:
+            node = self.head
         if self.isEmpty():
             raise IndexError("Cannot delete from an empty binary tree.")
         elif node.val == val:
